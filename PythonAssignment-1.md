@@ -1,6 +1,7 @@
 ## Assignment Part-1
 Q1. Why do we call Python as a general purpose and high-level programming language?
-Q1.ans -> 1. python is used widely in variety of domains and it qualifies all the rules of general purpose language.
+
+-> 1. python is used widely in variety of domains and it qualifies all the rules of general purpose language.
    2. Python is interpreted language ,python code is written in very, simple language and its source code is converted into bytecode(machine level code) to understand the machine
 
 Q2. Why is Python called a dynamically typed language?
