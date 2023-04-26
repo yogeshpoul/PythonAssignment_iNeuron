@@ -468,9 +468,9 @@ Q58. What will the output of the following?
 ```
 var = {}
 print(type(var))
-->
 ```
-`dict`
+output->
+dict
 
 
 Q59. How can we add an element in a dictionary?
