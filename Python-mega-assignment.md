@@ -574,3 +574,360 @@ s1={1: 'mango', 'name': 'hapus',"region":{"city":"mumbai","populatoin":100000}}
 for i in s1.items():
     print(i)
 ```
+### Coding problems
+Q76. Write a Python program to find the factorial of a given number.
+->
+```python
+#Q76ans
+#approach 1
+n=int(input("enter the number: "))
+factorial=1
+if n==0:
+    print("factorial(0) = 1")
+elif n<0:
+    print("factorial doesnt exists")
+else:
+    for i in range(1,n+1):
+        factorial=factorial*i
+    print(f"factorial({n}) = {factorial}")
+```
+```python
+#approach 2
+def fact(n):
+    return 1 if n==0 or n==1 else n*fact(n-1)
+n=5
+print(f"factorial({n}) = {fact(n)}")
+
+```
+
+
+Q77. Write a Python program to calculate the simple interest. Formula to calculate simple interest is SI = (P*R*T)/100
+```python
+#Q77
+def interest(p,r,t):
+    return (p*r*t)/100
+
+print(f"the simple interest is : {interest(8,8,6)}")
+```
+
+
+Q78. Write a Python program to calculate the compound interest. Formula of compound interest is A = P(1+ R/100)^t.
+```python
+#Q78
+def compound_interest(p,r,t):
+    amount= p*((1+ r/100)**t)
+    ci=amount-p
+    return ci
+
+print(f"the compound interest is : {compound_interest(10000, 10.25, 5)}")
+```
+
+
+Q79. Write a Python program to check if a number is prime or not.
+->
+```python
+#Q79ans
+def prime(n):
+    if n==1:
+        print("not prime")
+    if n>1:
+        for i in range(2,n):
+            if n%i==0:
+                print("not prime")
+                break;
+        else:
+            print("prime")
+n=1
+prime(n)
+```
+
+Q80. Write a Python program to check Armstrong Number.
+->
+```python
+#approch 1
+def is_armstrong_number(n):
+    sum=0
+    order=len(str(n))
+    num=n
+    while num>0:
+        digit=num%10
+        sum+=digit ** order
+        num=num//10
+    if sum==n:
+        return True
+    return False
+        
+print(is_armstrong_number(153)) # Output: True
+print(is_armstrong_number(371)) # Output: True
+print(is_armstrong_number(9474)) # Output: True
+print(is_armstrong_number(9475)) # Output: False
+```
+```python
+#approch 2
+def is_armstrong_number(n):
+    s = str(n)
+    sum = 0
+    order = len(str(n))
+    for i in range(order):
+        sum += int(s[i]) ** order
+    if sum == n:
+        return True 
+    return False
+print(is_armstrong_number(153)) # Output: True
+print(is_armstrong_number(371)) # Output: True
+print(is_armstrong_number(9474)) # Output: True
+print(is_armstrong_number(9475)) # Output: False
+```
+
+
+Q81. Write a Python program to find the n-th Fibonacci Number.
+-> 
+```python
+def Fibonacci(n):
+	if n<= 0:
+		print("wrong input")
+	elif n == 1:
+		return 0
+	elif n == 2:
+		return 1
+	else:
+		return Fibonacci(n-1)+Fibonacci(n-2)
+
+print(Fibonacci(4))
+```
+#approach 2
+
+
+Q82. Write a Python program to interchange the first and last element in a list.
+->
+```python
+#Q82ans
+def func(l):
+    l[:1],l[-1:]=l[-1:],l[:1]
+    return l
+l=[1,2,3,4,"yogesh"]
+func(l)
+```
+
+Q83. Write a Python program to swap two elements in a list.
+->
+```python
+def swap(l,i1,i2):
+    l[i1],l[i2]=l[i2],l[i1]
+    return l
+    
+l=[1,2,3,4,"yogesh"]
+swap(l,1,2)
+```
+
+
+Q84. Write a Python program to find N largest element from a list.
+->
+```python
+def large(l):
+    for i in l:
+        large_num=0
+        for j in l:
+            if j>large_num:
+                large_num=j
+    return large_num
+                
+l=[2,1,4,3,56,11,101]
+large(l)
+```
+
+Q85. Write a Python program to find cumulative sum of a list.
+->
+```python
+def cum_sum(l):
+    ListSum=0
+    for i in l:
+        ListSum+=i
+    return ListSum
+l=[2,1,4,3,56,11,101]
+cum_sum(l)
+```
+
+Q86. Write a Python program to check if a string is palindrome or not.
+-> 
+```python
+#Q86
+def palindrome(str):
+    if str==str[::-1]:
+        return "palindrome"
+    else:
+        return "not palindrome"
+str="abcba"
+print(f"{str} is {palindrome(str)}")
+```
+
+Q87. Write a Python program to remove i'th element from a string.
+-> 
+```python
+#approach 1
+def string_del(string,i):
+    return string.replace(string[i],"")
+
+string="yogesh"
+string_del(string,2)
+```
+```python
+#approach 2
+def string_del(string,i):
+    return string[:i]+string[i+1:]
+
+string="yogesh"
+string_del(string,2)
+```
+
+
+Q88. Write a Python program to check if a substring is present in a given string.
+->
+```python
+def func(string,sub_string):
+    if sub_string in string:
+        return "present"
+    return "not present"
+    
+string="This is yogesh"
+sub_string="yogesh"
+func(string,sub_string)
+```
+
+Q89. Write a Python program to find words which are greater than given length k.
+->
+```python
+#Q89ans
+def func(string,k):
+    new_words=[]
+    words=string.split(" ")
+    for word in range(len(words)):
+        if len(words[word])>k:
+            new_words.append(words[word])
+    return new_words
+string="this is yogesh"
+k=4
+func(string,k)
+```
+
+Q90. Write a Python program to extract Unique dictionary values.
+->
+```python
+#Q90ans
+test_dict = {'my': [5, 6, 7, 8],
+			'name': [10, 11, 7, 5],
+			'is': [6, 12, 10, 8],
+			'yogesh': [1, 2, 5]}
+
+l=[]
+for values in test_dict.values():
+    for value in values:
+        l.append(value)
+print(f"The unique values list is : {sorted(l)}")
+```
+
+
+
+Q91. Write a Python program to merge two dictionary.
+-> #Q91ans
+```python
+#approach 1
+def func(d1,d2):
+    d1.update(d2)
+    return d1
+d1={"fname":"yogesh","lname":"poul"}
+d2={"city":"parbhani","roll_no":3231}
+func(d1,d2)
+```
+```python
+#approach 2
+def func(d1,d2):
+    return d1 | d2
+d1={"fname":"yogesh","lname":"poul"}
+d2={"city":"parbhani","roll_no":3231}
+func(d1,d2)
+```
+
+
+
+Q92. Write a Python program to convert a list of tuples into dictionary.
+```
+Input : [('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]
+Output : {'Sachin': 10, 'MSD': 7, 'Kohli': 18, 'Rohit': 45}
+```
+Q92ans->
+```python
+#approch 1
+Input=[('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]
+a={}
+for values in Input:
+    a[values[0]]=values[1]
+print(a)
+```
+```python
+#approch 2
+Input=[('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]
+a={}
+for key,value in Input:
+    a[key]=value
+print(a)
+```
+
+
+Q93. Write a Python program to create a list of tuples from given list having number and its cube in each tuple.
+```
+Input: list = [9, 5, 6]
+Output: [(9, 729), (5, 125), (6, 216)]
+```
+```python
+#Q93ans
+#approch 1
+l = [9, 5, 6]
+a=[]
+for num in l:
+    k=(num,num**3)
+    a.append(k)
+print(a)
+```
+```python
+#approch 2
+l = [9, 5, 6]
+a=[(num,num**3) for num in l]
+print(a)
+
+```
+Q94. Write a Python program to get all combinations of 2 tuples.
+```
+Input : test_tuple1 = (7, 2), test_tuple2 = (7, 8)
+Output : [(7, 7), (7, 8), (2, 7), (2, 8), (7, 7), (7, 2), (8, 7), (8, 2)]
+```
+->
+```python
+test_tuple1 = (7, 2)
+test_tuple2 = (7, 8)
+a=[]
+for x in test_tuple1:
+    for y in test_tuple2:
+        k1=x,y
+        a.append(k1)
+        k2=y,x
+        
+        a.append(k2)
+print(a)  
+``` 
+
+
+Q95. Write a Python program to sort a list of tuples by second item.
+```
+Input : [('for', 24), ('Geeks', 8), ('Geeks', 30)] 
+Output : [('Geeks', 8), ('for', 24), ('Geeks', 30)]
+```
+->
+```python
+#Q95ans
+def sorting(l):
+    l.sort(key=lambda x:x[1])
+    return l
+Input=[('for', 24), ('Geeks', 98), ('Geeks', 30)] 
+sorting(Input)
+```
