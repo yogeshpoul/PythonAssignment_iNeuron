@@ -378,7 +378,7 @@ tup1+tup2
 
 Q44. Take a tuple as an input and print the count of elements in it.
 ->
-# Q44 ans:
+ Q44 ans:
 ```python
 #approach 1
 tup=input("enter the number").split(",")
@@ -468,6 +468,7 @@ Q58. What will the output of the following?
 ```
 var = {}
 print(type(var))
+->
 ```
 `dict`
 
@@ -490,7 +491,7 @@ for i in s1.items():
 Q61. Create a nested dictionary and access all the element in the inner dictionary.
 ```python
 s1={1: 'mango', 'name': 'hapus',"region":{"city":"mumbai","populatoin":100000}}
-for i in s1.items():
+for i in s1["region"].items():
     print(i)
 ```
 
@@ -574,6 +575,8 @@ s1={1: 'mango', 'name': 'hapus',"region":{"city":"mumbai","populatoin":100000}}
 for i in s1.items():
     print(i)
 ```
+
+
 ### Coding problems
 Q76. Write a Python program to find the factorial of a given number.
 ->
@@ -930,4 +933,94 @@ def sorting(l):
     return l
 Input=[('for', 24), ('Geeks', 98), ('Geeks', 30)] 
 sorting(Input)
+```
+
+Q96. Write a python program to print below pattern.
+```
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+```
+->
+```python
+#Q96ans
+for i in range(0,5):
+    for j in range(0,i+1):
+        print("* ",end="")
+    print("\r")
+```
+
+Q97. Write a python program to print below pattern.
+```
+    *
+   **
+  ***
+ ****
+*****
+```
+->
+```python
+h=6
+for i in range(0,h):
+    for j in range(0,h-i):
+        print(" ",end="")
+    for j in range(i):
+        print("*",end="")
+    print()
+```
+
+Q98. Write a python program to print below pattern.
+```
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+```
+->
+```python
+h=6
+for i in range(0,h):
+    for j in range(0,h-i):
+        print(" ",end="")
+    for j in range(i):
+        print("* ",end="")
+    print()
+
+```
+
+Q99. Write a python program to print below pattern.
+```
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+```
+->
+```python
+h=5
+for i in range(0,h):
+    for j in range(0,i+1):
+        print(j+1,end=" ")
+    print()
+```
+
+Q100. Write a python program to print below pattern.
+```
+A 
+B B 
+C C C 
+D D D D 
+E E E E E 
+```
+->
+```python
+h=5
+for i in range(0,h):
+    for j in range(0,i+1):
+        print(chr(ord('A')+i),end=" ")
+    print()
 ```
