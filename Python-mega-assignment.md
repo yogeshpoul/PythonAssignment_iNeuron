@@ -342,7 +342,7 @@ lst
 ```
 
 Q40. What is a tuple? How is it different from list?
--> list is ordered collection of homogeneous or heterogeneous elements enclosed within () . lists are immutable(non-changable) and list is mutable(changable). for the searching tuple is faster than list
+-> tuple is ordered collection of homogeneous or heterogeneous elements enclosed within () . tuples are immutable(non-changable) and list is mutable(changable). for the searching tuple is faster than list
 
 Q41. How can you create a tuple in Python?
 ->
